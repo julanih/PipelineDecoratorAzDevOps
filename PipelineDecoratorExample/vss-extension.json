@@ -1,0 +1,39 @@
+{
+    "manifestVersion": 1,
+    "id": "Decorator-Example-CI",
+    "publisher": "JulianyVasquez",
+    "version": "1.0.0",
+    "name": "Decorator Example for CI",
+    "description": "This is a pipeline decorator example for inject required tasks in a classic and YAML pipeline CI",
+    "public": false,
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],
+    "categories": [
+        "Azure Pipelines"
+    ],
+    "icons": {
+        "default": "images/devops.png"
+    },
+    "contributions": [
+        {
+            "id": "required-tasks-eg",
+            "type": "ms.azure-pipelines.pipeline-decorator",
+            "targets": [
+                "ms.azure-pipelines-agent-job.post-checkout-tasks"
+            ],
+            "properties": {
+                "template": "tasks-decorator.yml"
+            }
+        }
+    ],
+    "files": [
+        {
+            "path": "tasks-decorator.yml",
+            "addressable": true,
+            "contentType": "text/plain"
+        }
+    ]
+}

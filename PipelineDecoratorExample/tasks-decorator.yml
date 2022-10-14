@@ -1,0 +1,12 @@
+steps:
+- task: CmdLine@2
+  displayName: 'Test task (from decorator)'
+  inputs:
+    script: |
+      NumberCI=$(echo $(Build.BuildNumber) | cut -d . -f 2,3)
+      echo "##vso[task.setvariable variable=Version.Number;]$NumberCI"
+- task: CmdLine@2
+  displayName: 'Usgin Dynamic Var (from decorator)'
+  inputs:
+    script: |
+      echo $(Version.Number)
